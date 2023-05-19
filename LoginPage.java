@@ -9,12 +9,12 @@ public class LoginPage {
 	
 	WebDriver ldriver;
 	
-	public  LoginPage(WebDriver rDriver)
+	public LoginPage(WebDriver rDriver)
 	{
-		ldriver =rDriver;
-		PageFactory.initElements(rDriver,this);
-		
+		ldriver=rDriver;
+		PageFactory.initElements(rDriver, this);
 	}
+	
 	@FindBy(id="Email")
 	WebElement email;
 	
@@ -24,20 +24,16 @@ public class LoginPage {
 	@FindBy(xpath ="//button[@type='submit']")
 	WebElement lgnbtn;
 	
-	@FindBy(linkText="Logout")
+	@FindBy (linkText="Logout")
 	WebElement logout;
 	
 	public void enterEmail(String emaiAdd)
 	{
-		
-		email.clear();
 		email.sendKeys(emaiAdd);
 	}
 	
 	public void password(String pwd)
 	{
-		password.clear();
-
 		password.sendKeys(pwd);
 	}
 	
@@ -45,11 +41,11 @@ public class LoginPage {
 	{
 		lgnbtn.click();
 	}
-	
 	public void clickonLogOutButton()
 	{
 		logout.click();
 	}
+	
 	
 
 }
